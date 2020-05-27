@@ -141,3 +141,6 @@ catalog.csv
 *.db
 *.sql
 *.sqlite
+
+# Ignore dynaconf secret files
+.secrets.*

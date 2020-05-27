@@ -1,0 +1,9 @@
+[development]
+DATABASE_DSN = "sqlite:///db.sqlite3"
+BACKEND_CORS_ORIGINS = ["http://localhost", "http://localhost:8080"]
+
+[default]
+DATABASE_DSN = "sqlite:///db.sqlite3"
+PROJECT_NAME = "Matchflix"
+API_V1_STR = "/api/v1"
+BACKEND_CORS_ORIGINS = []
