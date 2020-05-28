@@ -20,6 +20,9 @@ async def shutdown():
     await database.disconnect()
 
 
+# f"https://api.themoviedb.org/3/movie/671/recommendations?api_key={settings.TMDB_API_KEY}&language=en-US&page=1"
+# f"https://api.themoviedb.org/3/movie/448665/similar?api_key={settings.TMDB_API_KEY}&language=en-US&page=1"
+
 # Set all CORS enabled origins
 if settings.BACKEND_CORS_ORIGINS:
     app.add_middleware(

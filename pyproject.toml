@@ -13,6 +13,9 @@ dynaconf = "^2.2.3"
 databases = {version = "^0.3.2", extras = ["sqlite"]}
 alembic = "^1.4.2"
 pydantic = {version = "^1.5.1", extras = ["email"]}
+requests = "^2.23.0"
+fake = "^0.8"
+faker = "^4.1.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
