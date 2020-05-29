@@ -141,3 +141,6 @@ catalog.csv
 *.db
 *.sql
 *.sqlite
+.secrets.toml
+.idea
+.idea/*

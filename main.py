@@ -1,60 +1,29 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
 from typing import List
-from uuid import UUID
-import dataset
-import enum
+
+from fastapi import FastAPI
+
+from matchflix.extensions.db import database
+from matchflix.models import Movie, UserMovies
+from matchflix import usecases
 
 app = FastAPI()
 
 
-class Action(enum.Enum):
-    LEFT = "LEFT"
-    RIGHT = "RIGHT"
-    DID_NOT_WATCH = "DID_NOT_WATCH"
+@app.on_event("startup")
+async def startup():
+    await database.connect()
 
 
-class Answer(BaseModel):
-    release_id: int
-    action: Action
+@app.on_event("shutdown")
+async def shutdown():
+    await database.disconnect()
 
 
-class UserAnswer(BaseModel):
-    email: str
-    answers: List[Answer]
+@app.get("/movies", response_model=List[Movie])
+async def list_movies():
+    return await usecases.list_movies()
 
 
-@app.get("/releases")
-def list_releases():
-    db = dataset.connect('sqlite:///db.sqlite3')
-    result = db.query('SELECT * FROM releases LIMIT 50')
-    result = [
-        {
-            "cover": r["image"],
-            "title": r["title"],
-            "id": r["id"],
-            "description": r["description"]
-        }
-        for r in result
-    ]
-    return result 
-
-
-@app.post("/users-answers", status_code=201)
-def create_user_answers(user_answer: UserAnswer):
-    db = dataset.connect('sqlite:///db.sqlite3')
-    user_table = db["user"]
-
-    user_id = user_table.upsert(dict(email=user_answer.email), ["email"])
-    answers_table = db["answers"]
-
-    for answer in user_answer.answers:
-        answers_table.insert({
-            "release_id": answer.release_id,
-            "action": answer.action.value,
-            "user_id": user_id
-        })
-
-    return {
-        "message": "Success!"
-    }
+@app.post("/user-movies", status_code=201)
+async def create_user_movies(user_movies: UserMovies):
+    return await usecases.register_user_movies(user_movies)

@@ -16,3 +16,7 @@ pytest = "^5.2"
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
+
+[tool.poetry.scripts]
+load-movies = "matchflix.cli.load_movies:main"
+create-db = "matchflix.cli.create_db:main"
