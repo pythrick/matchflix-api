@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/home/pythrick/.cache/pypoetry/virtualenvs/matchflix-F-Q__Dkg-py3.8",
+    "python.pythonPath": ".venv/bin/python",
     "python.linting.enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true

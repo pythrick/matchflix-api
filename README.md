@@ -4,7 +4,7 @@ Webservice for Matchflix app
 ## Backend local development, additional details
 
 ### General workflow
-By default, the dependencies are managed with (Poetry)[https://python-poetry.org/], go there and install it.
+By default, the dependencies are managed with [Poetry](https://python-poetry.org/), go there and install it.
 From project root dir you can install all dependencies with:
 ```shell
 $ poetry install

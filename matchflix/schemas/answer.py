@@ -13,12 +13,14 @@ class Action(str, Enum):
 
 # Shared properties
 class AnswerBase(BaseModel):
+    user_id: Optional[UUID]
     release_id: Optional[UUID]
     action: Optional[Action]
 
 
 # Properties to receive on answer creation
 class AnswerCreate(AnswerBase):
+    user_id = UUID
     release_id: UUID
     action: Action
 

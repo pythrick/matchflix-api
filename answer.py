@@ -3,8 +3,9 @@ from uuid import uuid4
 
 import dataset
 from faker import Faker
+from dynaconf import settings
 
-db = dataset.connect("sqlite:///db.sqlite3")
+db = dataset.connect(settings.DATABASE_DSN)
 user_db = db["user"]
 
 fake = Faker()
@@ -14,8 +15,8 @@ release_db = db["release"]
 answer_db = db["answer"]
 releases = list(release_db.all())
 
-for x in range(50):
-    user_id = user_db.insert({"id": str(uuid4()), "email": fake.email()})
+for i in range(500):
+    user_id = user_db.insert({"id": str(uuid4()), "email": f"{i}{fake.email()}"})
 
     for release in releases:
         answer = answer_db.insert(
