@@ -31,5 +31,11 @@ async def register_user_movies(user_movies: UserMovies):
     user_id = result[0]
     for answer in user_movies.answers:
         query = "INSERT INTO user_movies(id, movie_id, user_id, action) VALUES (:id, :movie_id, :user_id, :action)"
-        values = {"id": str(uuid4()), "movie_id": str(answer.movie_id), "user_id": user_id, "action": answer.action.value}
+        values = {
+            "id": str(uuid4()),
+            "movie_id": str(answer.movie_id),
+            "user_id": user_id,
+            "action": answer.action.value,
+        }
         await db.execute(query, values=values)
+    return user_id

@@ -1,0 +1,85 @@
+{
+    "email": "joao@email.com",
+    "answers": [
+        {
+            "movie_id": "00d3bc70-3f0c-49d2-93f2-23921de62317",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "02b5897a-30b9-400f-8949-7b7071e63254",
+            "action": "RIGHT"
+        },
+        {
+            "movie_id": "076b8a5c-f99b-4f8e-ba34-94123cb2f0f0",
+            "action": "RIGHT"
+        },
+        {
+            "movie_id": "2b4d864f-2b94-44c1-b98d-d8cd65d6c132",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "3831308c-f347-4bb2-b062-22da41c9153f",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "4a45cf1b-61b2-4cc3-b73e-4efafc03b0fb",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "5985d40a-2281-4df2-b403-997b5baacccf",
+            "action": "RIGHT"
+        },
+        {
+            "movie_id": "5cd27493-39ad-4295-bbd5-b68f41f9cc6e",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "6d09e481-bf1f-4009-ab58-4ee42ca7ca41",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "7b4c1e1f-2d19-4b89-bd77-536a72c56286",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "85ded942-ef4b-49f2-b2f4-8181d901ed4f",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "94a4e582-15ae-4434-b98f-e205d378dc49",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "98eb3c6b-875d-4380-bbc4-ab7bb5bf9d12",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "9c8d146c-860f-4305-98bc-c8ebe9e3d772",
+            "action": "RIGHT"
+        },
+        {
+            "movie_id": "ac2b4074-c772-4e87-8d17-7dfa6099e605",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "ad3c5ca4-d894-4374-a1d0-47155144a3b4",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "bef54d60-2715-4049-9ac6-19883496b6b4",
+            "action": "RIGHT"
+        },
+        {
+            "movie_id": "f1ce7771-bab8-4fcd-8c62-917feb38b9e8",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "f3b773e0-5f05-4cad-afe0-cdbe75fb7c7e",
+            "action": "LEFT"
+        },
+        {
+            "movie_id": "fdab96a3-db70-4b47-ba08-08469b8b5435",
+            "action": "LEFT"
+        }
+    ]
+}

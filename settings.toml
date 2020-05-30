@@ -1,0 +1,2 @@
+[development]
+DATABASE_DSN = "sqlite:///db.sqlite3"
