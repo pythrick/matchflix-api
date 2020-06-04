@@ -28,6 +28,7 @@ async def register_user_movies(user_movies: UserMovies):
     query = "SELECT id FROM users WHERE email = :email"
     values = {"email": user_movies.email}
     result = await db.fetch_one(query, values=values)
+    print(result)
     user_id = result[0]
     for answer in user_movies.answers:
         query = "INSERT INTO user_movies(id, movie_id, user_id, action) VALUES (:id, :movie_id, :user_id, :action)"
