@@ -3,7 +3,7 @@ import dataset
 
 
 async def find_match(user_id):
-    db = dataset.connect(settings.DATABASE_DSN)
+    db = dataset.connect(settings.DATABASE_URL)
 
     user_db = db["users"]
     # user = user_db.find_one(id=user_id)

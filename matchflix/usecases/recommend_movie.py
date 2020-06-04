@@ -5,7 +5,7 @@ import requests
 from dynaconf import settings
 
 
-db = dataset.connect(settings.DATABASE_DSN)
+db = dataset.connect(settings.DATABASE_URL)
 
 
 def list_user_movies(user_id):

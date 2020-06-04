@@ -27,9 +27,9 @@ def insert_movies_in_db(db, movies):
 
 def main():
     movies = list_movies_from_tmdb()
-    db = dataset.connect(settings.DATABASE_DSN)
+    db = dataset.connect(settings.DATABASE_URL)
     insert_movies_in_db(db, movies)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
