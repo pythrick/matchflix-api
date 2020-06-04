@@ -5,7 +5,7 @@ from dynaconf import settings
 
 
 async def main():
-    await db.connect(settings.DATABASE_URL)
+    await db.connect()
     if os.path.exists("db.sqlite3"):
         os.remove("db.sqlite3")
     query = """CREATE TABLE movies ( 
