@@ -11,10 +11,7 @@ from matchflix import usecases
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8080",
-    "http://0.0.0.0:8080",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
