@@ -3,6 +3,7 @@ from uuid import uuid4
 import dataset
 import requests
 from dynaconf import settings
+import time
 
 
 def list_movies_from_tmdb():
@@ -23,6 +24,7 @@ def insert_movies_in_db(db, movies):
                 "tmdb_id": item["id"],
             }
         )
+        time.sleep(1)
 
 
 def main():
