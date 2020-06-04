@@ -9,7 +9,7 @@ async def main():
     if os.path.exists("db.sqlite3"):
         os.remove("db.sqlite3")
     query = """CREATE TABLE movies ( 
-        id VARCHAR(32)  NOT NULL PRIMARY KEY, 
+        id VARCHAR(36)  NOT NULL PRIMARY KEY, 
         title VARCHAR(50)  NOT NULL,
         description VARCHAR(1000)  NOT NULL,
         cover VARCHAR(200)  NOT NULL,
@@ -18,15 +18,15 @@ async def main():
     await db.execute(query)
 
     query = """CREATE TABLE users ( 
-            id VARCHAR(32)  NOT NULL PRIMARY KEY, 
+            id VARCHAR(36)  NOT NULL PRIMARY KEY, 
             email VARCHAR(200)  NOT NULL
         ); """
     await db.execute(query)
 
     query = """CREATE TABLE user_movies ( 
-            id VARCHAR(32)  NOT NULL PRIMARY KEY, 
-            movie_id VARCHAR(32)  NOT NULL,
-            user_id VARCHAR(32)  NOT NULL,
+            id VARCHAR(36)  NOT NULL PRIMARY KEY, 
+            movie_id VARCHAR(36)  NOT NULL,
+            user_id VARCHAR(36)  NOT NULL,
             action VARCHAR(10)  NOT NULL
         ); """
     await db.execute(query)
