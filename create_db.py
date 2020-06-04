@@ -1,10 +1,11 @@
 from matchflix.extensions.db import database as db
 import os
 import asyncio
+from dynaconf import settings
 
 
 async def main():
-    await db.connect()
+    await db.connect(settings.DATABASE_URL)
     if os.path.exists("db.sqlite3"):
         os.remove("db.sqlite3")
     query = """CREATE TABLE movies ( 
@@ -31,7 +32,7 @@ async def main():
     await db.execute(query)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     result = loop.run_until_complete(main())
